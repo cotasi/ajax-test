@@ -10,13 +10,15 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-    <button>가져와</button>
+    <button class="button1" data-info=".com">가져와1</button>
+    <button class="button2" data-info=".history">가져와2</button>
+    <button class="button3" data-info=".board">가져와3</button>
     <div id="loadcon">
         여기로...
     </div>
     <script>
-        $("button").click(()=>{
-            $('#loadcon').load("/ajax/data/data.html .com")
+        $("button").click(function(){
+            $('#loadcon').load("/ajax/data/data.html "+$(this).data("info"))
         });
     </script>
 </body>
